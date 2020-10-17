@@ -38,7 +38,7 @@ The script.bash file contains examples, the best of which are in this order:
 - opengl
 
 uncomment the example line in the script.bash file to run the examples (island below): 
-- # cd $examplebasepath/island ; chmod +x island; ./island
+- `# cd $examplebasepath/island ; chmod +x island; ./island`
 
 
 If you want to edit something, the script is already set up compile/version/execute "RGB" , 
