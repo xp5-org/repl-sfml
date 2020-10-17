@@ -28,22 +28,22 @@ the script is set up to do the following:
 - skip past all the commented-out example programs pre-compiled
 - check if rgb.cpp is modified newer than rgb binary 
 - - if yes, copy old bin and src file to old_targets, then recompile, and run binary in X
-- - if no , skip to running the rgb binary and start X 
-
+- - if no , skip to running the rgb binary and start X  
+ 
 
 
 The script.bash file contains examples, the best of which are in this order:
 - island
 - shader
-- opengl
+- opengl  
 
 uncomment the example line in the script.bash file to run the examples (island below): 
-- `# cd $examplebasepath/island ; chmod +x island; ./island`
+- `# cd $examplebasepath/island ; chmod +x island; ./island`  
 
 
 If you want to edit something, the script is already set up compile/version/execute "RGB" , 
 it is a broken example of 3-windows opening and displaying a circle. it is broken because currently
-it is only monitoring for window1 status
+it is only monitoring for window1 status  
 
 
 
