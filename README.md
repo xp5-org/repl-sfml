@@ -48,15 +48,16 @@ it is only monitoring for window1 status
 
 
 
-
+```
 ███████╗██████╗ ██████╗  ██████╗ ██████╗ ███████╗
 ██╔════╝██╔══██╗██╔══██╗██╔═══██╗██╔══██╗██╔════╝
 █████╗  ██████╔╝██████╔╝██║   ██║██████╔╝███████╗
 ██╔══╝  ██╔══██╗██╔══██╗██║   ██║██╔══██╗╚════██║
 ███████╗██║  ██║██║  ██║╚██████╔╝██║  ██║███████║
 ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝
-
+```
 Sometimes i get the following error after my program closes strangely or if i exit the repl and reopen:
+```
 ===================================================================
 Loading main binary 
 Starting X
@@ -65,7 +66,7 @@ Failed to open X11 display; make sure the DISPLAY environment variable is set co
 script.bash: line 79:   890 Aborted                 (core dumped) $replrootpath/$target_file
 done
 ===================================================================
-
+```
 i am not sure how to resolve it, sometimes killing the open xorg sessions resolves, sometimes 
 the only way to fix is close repl and wait hours - or an immediate workaround is to FORK the repl 
 as the forked repl will inherit a new environment. I need to figure out how to reset X11/Xorgvnc/etc 
@@ -83,14 +84,14 @@ close and reset after some time passes.
 
 
 
-
+```
  ██████╗██████╗ ███████╗██████╗ ██╗████████╗███████╗
 ██╔════╝██╔══██╗██╔════╝██╔══██╗██║╚══██╔══╝██╔════╝
 ██║     ██████╔╝█████╗  ██║  ██║██║   ██║   ███████╗
 ██║     ██╔══██╗██╔══╝  ██║  ██║██║   ██║   ╚════██║
 ╚██████╗██║  ██║███████╗██████╔╝██║   ██║   ███████║
  ╚═════╝╚═╝  ╚═╝╚══════╝╚═════╝ ╚═╝   ╚═╝   ╚══════╝
-
+```
  REPL cloned from:          https://repl.it/@SPQR
  SFML Docs:                 https://www.sfml-dev.org/documentation/2.1/index.php
  ASCII art generator:       https://manytools.org/hacker-tools/ascii-banner/
