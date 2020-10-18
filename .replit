@@ -1,2 +1,2 @@
 language = "cpp"
-run = "chmod +x * ; bash script.bash"
+run = "chmod +x * ; bash script.sh"
