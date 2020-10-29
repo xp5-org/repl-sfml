@@ -35,7 +35,6 @@ target_file=$replrootpath/'rgb'
 ################################################################################
 #     uncomment to run an example SFML app instead of compiling rgb.cpp        #
 #     or uncomment all to load sequentially                                    #
-#  ~~Island , opengl, pong, shader is the coolest the rest are kinda ehh~~~    #
 ################################################################################
 
 # cd $examplebasepath/island ; chmod +x ./island; ./island   # <<<<<< this one is neato 
