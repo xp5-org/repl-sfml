@@ -75,7 +75,7 @@ at the start of this bash script
 
 if you are getting errors running this the second or third time but worked the first or are getting 
 strange behavior - such as windows which should be windowed are now full-screen with no 
-option to close  - this can be due to a bad environent on REPL and will need to let the environment 
+option to close  - this can be due to a bad environment on REPL and will need to let the environment 
 close and reset after some time passes. 
 
 
