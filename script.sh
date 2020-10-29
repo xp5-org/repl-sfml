@@ -5,8 +5,7 @@
 #   ███████║███████╗   ██║   ╚██████╔╝██║         
 #   ╚══════╝╚══════╝   ╚═╝    ╚═════╝ ╚═╝
 ################################################################################
-#      set up paths and junk, the paths move around on repl                    #
-#      so dont assume anything, $PWD is a cup-game                             #
+#      set up paths         , the paths move around on repl                    #
 ################################################################################
 replrootpath=$PWD
 export LD_LIBRARY_PATH=$replrootpath/SFML-2.5.1/lib
