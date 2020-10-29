@@ -1,5 +1,5 @@
-# repl-freeglut-cpp
-c++ repl.it demo for freeglut OpenGL
+# repl-sfml-cpp
+c++ demo for SFML in repl.it environment
 ```
 REPL:   https://repl.it/@qcm/repl-sfml
 GITHUB: https://github.com/xp5-org/repl-sfml
