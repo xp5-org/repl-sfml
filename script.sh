@@ -14,7 +14,7 @@ cdate=$(date +%Y%m%dT%H%M%s)
 backuptargetname=$target_file$cdate
 backupsourcename=$source_file$cdate
 
-# name your files here - this is your own thing to edit/complile in C++ 
+# name your files here - this is your own thing to edit/complile in C++
 source_file=$replrootpath/'rgb.cpp'
 target_file=$replrootpath/'rgb'
 # source_file=$examplebasepath/island.cpp
@@ -77,7 +77,7 @@ then
     mv $target_file old_targets/$backuptargetname
     cp $source_file old_targets/$backupsourcename
     time clang++ -std=c++17 -LSFML-2.5.1/lib -lsfml-graphics -lsfml-window -lsfml-system $source_file -o $target_file -ISFML-2.5.1/include
-    chmod 744 ./$target_file
+    chmod 744 $target_file
 
 fi
 
