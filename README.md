@@ -95,6 +95,7 @@ close and reset after some time passes.
 ```
  REPL cloned from:          https://repl.it/@SPQR
  SFML Docs:                 https://www.sfml-dev.org/documentation/2.1/index.php
+ SFML Github:               https://github.com/SFML/SFML
  ASCII art generator:       https://manytools.org/hacker-tools/ascii-banner/
  my github:                 https://github.com/xp5-org/repl-sfml/
  ```
