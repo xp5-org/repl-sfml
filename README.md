@@ -77,6 +77,8 @@ strange behavior - such as windows which should be windowed are now full-screen 
 option to close  - this can be due to a bad environment on REPL and will need to let the environment 
 close and reset after some time passes. 
 
+I have filed a bug with repl here : https://repl.it/bugs/p/x11-vnc-environment-stale
+
 
 
 
