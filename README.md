@@ -40,8 +40,7 @@ uncomment the example line in the script.bash file to run the examples (island b
 
 
 If you want to edit something, the script is already set up compile/version/execute "RGB" , 
-it is a broken example of 3-windows opening and displaying a circle. it is broken because currently
-it is only monitoring for window1 status  
+it is an example of a single window opening and displaying a circle. The script.sh file will handle versioning, so each edit you make and recomplile will be marked wit the current date/time and moved to the old_targets folder 
 
 
 
