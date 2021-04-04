@@ -9,6 +9,7 @@
 ############################################################
 replrootpath=$PWD
 export LD_LIBRARY_PATH=$replrootpath/SFML-2.5.1/lib
+export DISPLAY=:0.0
 examplebasepath=$replrootpath/SFML-2.5.1/share/SFML/examples
 cdate=$(date +%Y%m%dT%H%M%s)
 backuptargetname=$target_file$cdate
