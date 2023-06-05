@@ -1,103 +1,58 @@
-# repl-sfml-cpp
-c++ demo for SFML in repl.it environment
-```
-REPL:   https://repl.it/@qcm/repl-sfml
-GITHUB: https://github.com/xp5-org/repl-sfml
-```
-
-&nbsp;
-&nbsp;
-&nbsp;
-
-
-
-I hope this repl can inspire others to learn and interact with SFML in C++ more easily. 
-Do let me know if there are any changes i can help with 
-
-
-How to use, things to do and explore:
-1) Click run, to run included simple demo (open window, make colored circles)
-2) read SFML docs, try out some code changes and hit run again - it will rebuild and re run
-3) edit script.bash, try out island example or pong demo. 
-4) edit paths in script.bash to edit island/pong/shader/etc included examples
-
-
-the script is set up to do the following:
-- skip past all the commented-out example programs pre-compiled
-- check if rgb.cpp is modified newer than rgb binary 
-- - if yes, copy old bin and src file to old_targets, then recompile, and run binary in X
-- - if no , skip to running the rgb binary and start X  
- 
-
-
-The script.bash file contains examples, the best of which are in this order:
-- island
-- shader
-- opengl  
-
-uncomment the example line in the script.bash file to run the examples (island below): 
-- `# cd $examplebasepath/island ; chmod +x island; ./island`  
-
-
-If you want to edit something, the script is already set up compile/version/execute "RGB" , 
-it is an example of a single window opening and displaying a circle. The script.sh file will handle versioning, so each edit you make and recomplile will be marked wit the current date/time and moved to the old_targets folder 
+How to use SFML in replit using NixOS  - Updted June-2023
+- if you have any questions or need help send me a message on replit
 
 
 
 
+To install SFML and build code with the libraries, there are two methods. One is - is to install the packages.
+The second - you can use a script to call a new "nix shell".
+
+
+Using the nix-shell approach is favorable if you aren't sure about the packages you want to install or will need, and want to try several things out without having to "undo" any of it
+
+
+#############################################
+Install a package permanently:
+#############################################
+1) run the install command from your nix shell
+# install the nix packages
+nix-env -iA nixpkgs.sfml nixpkgs.csfml
+
+2) check in the nix shell to be sure the packages are there
+# nix-env -q --installed
+csfml-2.5.1
+nix-2.3.16
+sfml-2.5.1
+
+3) run your G++ command
+
+Extra troubleshooting:
+how to find where packages are:
+# nix-build --no-out-link -E '(with import <nixpkgs> {}; lib.getDev sfml)'
+-- this will show a path. if something is supposed to be installed but G++ cant find it, check with this 
+
+
+#############################################
+package(s) with nix shell temporarily
+#############################################
+To use temporary nix shell packages with repl , it is easiest to start with a "bash shell" template. OR, modify your current repl to start into a bash shell with this line (check script.sh and replit.nix in this repl)
+
+1) repl needs to start a bash script, we use the bash script to avoid repeating typing in the same package names each time
+# run = "chmod +x * ; bash script.sh"
+-- this is the 1st line of my replit.nix, so despite this being a "C++" repl, the first thing it does is run a bash script
+
+2) make a script.sh and put this in it:
+2a) Compile command
+echo 'script starting'
+nix-shell -p sfml csfml --run 'bash -c "g++ main.cpp -o main -lsfml-graphics -lsfml-window -lsfml-system"'
+-- what is happening here? We are telling nix-shell to start with the SFML and CSFML libraries , and with a --run flag, we are starting a second bash shell, with a command all ready to execute right away. Its the G++ compile command.
+
+This lets us start a new nix shell, and then from inside that nix shell (where the SFML header files are visible), run the G++ compile command.
+2b) start program inside nix shell
+    #  bash -c "./main"
+
+
+For a full example, check out the script.sh and replit.nix file of this repl 
 
 
 
-```
-███████╗██████╗ ██████╗  ██████╗ ██████╗ ███████╗
-██╔════╝██╔══██╗██╔══██╗██╔═══██╗██╔══██╗██╔════╝
-█████╗  ██████╔╝██████╔╝██║   ██║██████╔╝███████╗
-██╔══╝  ██╔══██╗██╔══██╗██║   ██║██╔══██╗╚════██║
-███████╗██║  ██║██║  ██║╚██████╔╝██║  ██║███████║
-╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝
-```
-Sometimes i get the following error after my program closes strangely or if i exit the repl and reopen:
-```
-===================================================================
-Loading main binary 
-Starting X
-..............................................................FATAL: /usr/bin/polygott-x11-vnc: Gave up waiting for X server :0
-Failed to open X11 display; make sure the DISPLAY environment variable is set correctly
-script.bash: line 79:   890 Aborted                 (core dumped) $replrootpath/$target_file
-done
-===================================================================
-```
-i am not sure how to resolve it, sometimes killing the open xorg sessions resolves, sometimes 
-the only way to fix is close repl and wait hours - or an immediate workaround is to FORK the repl 
-as the forked repl will inherit a new environment. I need to figure out how to reset X11/Xorgvnc/etc 
-at the start of this bash script
-
-if you are getting errors running this the second or third time but worked the first or are getting 
-strange behavior - such as windows which should be windowed are now full-screen with no 
-option to close  - this can be due to a bad environment on REPL and will need to let the environment 
-close and reset after some time passes. 
-
-I have filed a bug with repl here : https://repl.it/bugs/p/x11-vnc-environment-stale
-
-
-
-
-
-
-
-
-```
- ██████╗██████╗ ███████╗██████╗ ██╗████████╗███████╗
-██╔════╝██╔══██╗██╔════╝██╔══██╗██║╚══██╔══╝██╔════╝
-██║     ██████╔╝█████╗  ██║  ██║██║   ██║   ███████╗
-██║     ██╔══██╗██╔══╝  ██║  ██║██║   ██║   ╚════██║
-╚██████╗██║  ██║███████╗██████╔╝██║   ██║   ███████║
- ╚═════╝╚═╝  ╚═╝╚══════╝╚═════╝ ╚═╝   ╚═╝   ╚══════╝
-```
-```
- REPL cloned from:          https://repl.it/@SPQR
- SFML Docs:                 https://www.sfml-dev.org/documentation/2.1/index.php
- SFML Github:               https://github.com/SFML/SFML
- ASCII art generator:       https://manytools.org/hacker-tools/ascii-banner/
- my github:                 https://github.com/xp5-org/repl-sfml/
- ```
